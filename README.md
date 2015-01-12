@@ -1,5 +1,10 @@
-# Setting up sinatra
+## Setting up sinatra
 ```shell
-   yum isnstall rubygems
+   yum install rubygems
    gem install sinatra
+```
+
+## URL Routing
+```ruby
+
 ```
