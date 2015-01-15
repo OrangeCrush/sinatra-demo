@@ -197,3 +197,31 @@ Use a Hash to maintain a list of servers
 Servers
    nlm00121  => true  ...... (this server is in maintenance mode)
    nlm00124  => false ...... (this server is not in maintenance mode)
+
+
+Solution:
+```ruby
+servers = {}
+
+get %r{^/app/([np][al][gm]\d{5})$} do |server|
+   if servers[server].nil?
+      "Server not in maintenance mode\n"
+   else
+      "Server is in maintenance mode\n"
+   end
+end
+
+get '/app/servers' do 
+   servers.to_s
+end
+
+post %r{^/app/([np][al][gm]\d{5})$} do |server|
+   if servers[server].nil?
+      servers[server] = true
+      "Server successfully put in maintenance mode\n"
+   else
+      "Server is already in maintenance mode, check back later\n"
+   end
+end
+```
+

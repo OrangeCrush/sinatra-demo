@@ -30,20 +30,20 @@ get '/settings' do
 end
 
 get %r{^/kohls/([np][al][gm]\d{5})$} do |capture|
-   "Server name : #{capture} was called "
+   "Server name : #{capture} was called \n"
 end
 
 get %r{^/kohls/([np][al][gm]\d{5})$} do |capture|
-   "Server name : #{capture} was called "
+   "Server name : #{capture} was called \n"
 end
 
 servers = {}
 
 get %r{^/app/([np][al][gm]\d{5})$} do |server|
    if servers[server].nil?
-      "Server not in maintenance mode"
+      "Server not in maintenance mode\n"
    else
-      "Server is in maintenance mode"
+      "Server is in maintenance mode\n"
    end
 end
 
@@ -54,8 +54,8 @@ end
 post %r{^/app/([np][al][gm]\d{5})$} do |server|
    if servers[server].nil?
       servers[server] = true
-      "Server successfully put in maintenance mode"
+      "Server successfully put in maintenance mode\n"
    else
-      "Server is already in maintenance mode, check back later"
+      "Server is already in maintenance mode, check back later\n"
    end
 end
