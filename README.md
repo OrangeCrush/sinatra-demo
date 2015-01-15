@@ -134,7 +134,7 @@ curl -X POST -d "" localhost:4567/kohls/store1500
 curl -X POST -d "" localhost:4567/kohls/store1500
 ```
 
-### Wildcards and regular expressions
+### Route matching Regular expressions
 
 Can force routes to only be called if the route matches a regex
 
@@ -159,3 +159,37 @@ irb(main):009:0> /[np][al][mg]\d{5}/.match 'nlg00495'
 irb(main):010:0> /[np][al][mg]\d{5}/.match 'xyz12345'
 => nil
 ```
+
+
+
+
+
+## ERB templates
+
+Embeded ruby templates are a great way to serve dynamic HTML
+
+
+
+
+
+
+
+
+
+
+## A Practical example
+Write a simple web app that can tell if a server
+is being worked on and in maintenance mode
+
+Routes to set up
+
+GET  /app/:servername   -> Check the servers status (is it in maintenance mode? )
+POST /app/:servername   -> Check the servers status (is it in maintenance mode? )
+
+Use a Hash to maintain a list of servers
+
+Servers
+   nlm00121  => true  ...... (this server is in maintenance mode)
+   nlm00124  => false ...... (this server is not in maintenance mode)
+
+Make a simple ui to facilitate these requests

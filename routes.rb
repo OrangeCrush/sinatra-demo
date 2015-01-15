@@ -32,3 +32,27 @@ end
 get %r{/kohls/([np][al][gm]\d{5})} do |capture|
    "Server name : #{capture} was called "
 end
+
+get %r{/kohls/([np][al][gm]\d{5})} do |capture|
+   "Server name : #{capture} was called "
+end
+
+servers = {:test => 'asdf'}
+
+get %r{/app/([np][al][gm]\d{5})} do |server|
+   #if servers[server].empty?
+   #   "Server not in maintenance mode"
+   #else
+   #   "Server is in maintenance mode"
+   #end
+   "#{servers.class}"
+end
+
+post %r{/app/([np][al][gm]\d{5})} do |server|
+   if servers[server].empty?
+      servers[servers] = true
+      "Server successfully put in maintenance mode"
+   else
+      "Server is already in maintenance mode, check back later"
+   end
+end
