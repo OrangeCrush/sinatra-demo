@@ -50,13 +50,21 @@ By default all files in the public directory are served statically
 No code / config required outside of the require
 
 ```shell
-[maxwell@Asgard:~/github/sinatra-demo  (master)  BASH]
-$ ls -l
+[maxwell@Asgard:~/github/sinatra-demo  (master *)  BASH]
+$ ls -lR
+.:
 total 12
 drwxrwxr-x 2 maxwell maxwell 4096 Jan 14 21:39 public/
--rw-rw-r-- 1 maxwell maxwell 2212 Jan 14 22:38 README.md
+-rw-rw-r-- 1 maxwell maxwell 2229 Jan 14 22:41 README.md
 -rwxrwxr-x 1 maxwell maxwell  659 Jan 14 22:28 routes.rb*
+
+./public:
+total 4
+-rw-rw-r-- 1 maxwell maxwell 129 Jan 14 21:39 index.html
+
 ```
+
+
 
 
 ## Sintra URL routing
