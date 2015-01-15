@@ -23,6 +23,7 @@ sinatra (1.4.5)
 
 ## Getting Started
 
+file: routes.rb
 ```ruby
 #!/usr/bin/env ruby
 
@@ -37,13 +38,15 @@ try navigating to http://localhost:4567
 No real configuration needed- very usable out of box
 Some simple configuration options
 
-**Ruby Protip :: labels begin with a colon and are translated to numbers to improve performance**
+**Ruby Protip #1 :: labels are string tokens that begin with a colon and are translated to numbers to improve performance**
+(i.e.  :bread, or :paper)
 
 General syntax
 set :label, value
 
 Settings are globally available in the settings variable
 
+file: routes.rb
 ```ruby
 set :port, 4567
 set :logging, true
@@ -58,6 +61,7 @@ settings.logging   # => evalutes to true
 By default all files in the public directory are served statically
 No code / config required outside of the require
 
+file: routes.rb
 ```shell
 [maxwell@Asgard:~/github/sinatra-demo  (master *)  BASH]
 $ ls -lR
@@ -83,8 +87,9 @@ with a url matching pattern
 
 * Sinatra defines a keyword corresponding to each HTTP method
 
-**Ruby Protip :: the return value of the last line of a function is return value of the function**
+**Ruby Protip #2 :: the return value of the last line of a function is return value of the function**
 
+file: routes.rb
 ```ruby
 get '/' do
    "Welcome to the Kohl's ruby user group\n"
@@ -104,6 +109,8 @@ curl -X GET localhost:4567/kohls/unix
 
 Listening for POST requests
 Post variables can be passed in as block variables 
+
+file: routes.rb
 ```ruby
 post '/kohls/:store' do |store|
    "Welcome to kohls store #{store}"
