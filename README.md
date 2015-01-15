@@ -44,7 +44,7 @@ Some simple configuration options
 (i.e.  :bread, or :paper)
 
 General syntax
-set :label, value
+set :symbol, value
 
 Settings are globally available in the settings variable
 
@@ -59,8 +59,8 @@ settings.port      # => evalutes to 4567
 settings.logging   # => evalutes to true
 ```
 
-**Ruby Protip #1 :: labels are string tokens that begin with a colon and are translated to numbers to improve performance**
-Labels are not specific to sinatra
+**Ruby Protip #1 :: symbols are string tokens that begin with a colon and are translated to numbers to improve performance**
+Symbols are not specific to sinatra
 
 ## Serving static files
 By default all files in the public directory are served statically
