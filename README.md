@@ -171,12 +171,16 @@ irb(main):010:0> /[np][al][mg]\d{5}/.match 'xyz12345'
 ```
 
 
-
-
-
 ## ERB templates
 
 Embeded ruby templates are a great way to serve dynamic HTML
+
+Put erb code in views/template_name.erb
+use sinatra's erb function to compile and serve the template.
+
+get '/erb' do
+   erb :template_name, :locals = {:name => 'Max'}
+end
 
 
 ## A Practical example
@@ -193,5 +197,3 @@ Use a Hash to maintain a list of servers
 Servers
    nlm00121  => true  ...... (this server is in maintenance mode)
    nlm00124  => false ...... (this server is not in maintenance mode)
-
-Make a simple ui to facilitate POST requests

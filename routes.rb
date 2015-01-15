@@ -29,17 +29,17 @@ get '/settings' do
     Sinatra environment: <b>#{settings.environment}</b>"
 end
 
-get %r{/kohls/([np][al][gm]\d{5})} do |capture|
+get %r{^/kohls/([np][al][gm]\d{5})$} do |capture|
    "Server name : #{capture} was called "
 end
 
-get %r{/kohls/([np][al][gm]\d{5})} do |capture|
+get %r{^/kohls/([np][al][gm]\d{5})$} do |capture|
    "Server name : #{capture} was called "
 end
 
 servers = {}
 
-get %r{/app/([np][al][gm]\d{5})} do |server|
+get %r{^/app/([np][al][gm]\d{5})$} do |server|
    if servers[server].nil?
       "Server not in maintenance mode"
    else
@@ -51,7 +51,7 @@ get '/app/servers' do
    servers.to_s
 end
 
-post %r{/app/([np][al][gm]\d{5})} do |server|
+post %r{^/app/([np][al][gm]\d{5})$} do |server|
    if servers[server].nil?
       servers[server] = true
       "Server successfully put in maintenance mode"
