@@ -147,3 +147,6 @@ get %r{/kohls/([np][al][gm]\d{5})} do |capture|
 end
 ```
 
+**Ruby Protip #3 :: Surrounding a string with %r{} or '/'s turns the string into a regex**
+
+(Much easier to read this regex with the %r{} syntax)
