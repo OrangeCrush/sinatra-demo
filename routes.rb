@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'sinatra'
 
-set :port, 4567
+set :port, 80
 set :logging, true
 set :environment, :production
 
