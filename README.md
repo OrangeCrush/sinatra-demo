@@ -12,6 +12,15 @@
    # gem install sinatra
 ```
 
+For a simpler install I decided to make this guide with ruby 193
+and sinatra 1.4.5
+```
+$ ruby --version && gem list | grep sinatra
+ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
+sinatra (1.4.5)
+
+```
+
 ## Getting Started
 
 ```ruby
