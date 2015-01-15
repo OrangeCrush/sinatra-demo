@@ -8,8 +8,8 @@
 
 ## Installing sinatra
 ```shell
-   # yum install rubygems
-   # gem install sinatra
+# yum install rubygems
+# gem install sinatra
 ```
 
 For a simpler install I decided to make this guide with ruby 193
