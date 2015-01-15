@@ -11,6 +11,6 @@ get '/kohls/unix' do
    "Welcome to the Kohl's unix group page\n"
 end
 
-post '/kohls/:store' do
-  "" 
+post '/kohls/:store' do |store|
+   "Welcome to kohls store #{store}"
 end

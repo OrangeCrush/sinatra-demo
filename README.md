@@ -22,13 +22,10 @@ require 'sinatra'
 Pairing of a HTTP method (GET POST PUT DELETE PATCH)
 with a url matching pattern
 
-- In Ruby the return value of the last line of a function 
-will be the return value of the entire function
+* Sinatra defines a keyword corresponding to each HTTP method
+* Ruby convention :: last line is return value
 
 ```ruby
-   .
-   .
-
 get '/' do
    "Welcome to the Kohl's ruby user group\n"
 end
@@ -38,16 +35,24 @@ get '/kohls/unix' do
 end
 ```
 
-Testing...
+Testing... via the web browser or cURL
 
 ```shell
 curl -X GET localhost:4567
 curl -X GET localhost:4567/kohls/unix
 ```
 
-```shell
-curl -X GET localhost:4567
-curl -X GET localhost:4567/kohls/unix
+Listening for POST requests
+
+```ruby
+post '/kohls/:store' do |store|
+   "Welcome to kohls store #{store}"
+end
 ```
 
+Making a POST request
+
+```shell
+curl -X POST -d "" localhost:4567/kohls/store1500
+```
 
