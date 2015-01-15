@@ -101,6 +101,15 @@ end
 get '/kohls/unix' do
    "Welcome to the Kohl's unix group page\n"
 end
+
+
+# A more Practical example.. Display sinatras settings
+
+get '/settings' do
+   "Sinatra running on port: <b>#{settings.port}</b><br>
+    Sinatra logging enabled?: <b>#{settings.logging}</b><br>
+    Sinatra environment: <b>#{settings.environment}</b>"
+end
 ```
 
 Testing... via the web browser or cURL
@@ -108,6 +117,7 @@ Testing... via the web browser or cURL
 ```shell
 curl -X GET localhost:4567
 curl -X GET localhost:4567/kohls/unix
+curl -X GET localhost:4567/settings
 ```
 
 Listening for POST requests
@@ -169,14 +179,6 @@ irb(main):010:0> /[np][al][mg]\d{5}/.match 'xyz12345'
 Embeded ruby templates are a great way to serve dynamic HTML
 
 
-
-
-
-
-
-
-
-
 ## A Practical example
 Write a simple web app that can tell if a server
 is being worked on and in maintenance mode
@@ -192,4 +194,4 @@ Servers
    nlm00121  => true  ...... (this server is in maintenance mode)
    nlm00124  => false ...... (this server is not in maintenance mode)
 
-Make a simple ui to facilitate these requests
+Make a simple ui to facilitate POST requests
