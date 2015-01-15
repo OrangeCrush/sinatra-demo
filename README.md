@@ -28,10 +28,12 @@ try navigating to http://localhost:4567
 No real configuration needed- very usable out of box
 Some simple configuration options
 
-* Ruby Protip :: labels begin with a colon and are translated to numbers to improve performance
+**Ruby Protip :: labels begin with a colon and are translated to numbers to improve performance**
 
 General syntax
 set :label, value
+
+Settings are globally available in the settings variable
 
 ```ruby
 set :port, 4567
@@ -39,7 +41,8 @@ set :logging, true
 set :environment, :production
 
 # access these values later
-settings.
+settings.port      # => evalutes to 4567
+settings.logging   # => evalutes to true
 ```
 
 ## Serving static files
@@ -54,7 +57,7 @@ with a url matching pattern
 
 * Sinatra defines a keyword corresponding to each HTTP method
 
-* Ruby Protip :: last line is return value
+**Ruby Protip :: the return value of the last line of a function is return value of the function**
 
 ```ruby
 get '/' do
