@@ -150,3 +150,12 @@ end
 **Ruby Protip #3 :: Surrounding a string with %r{} or '/'s turns the string into a regex**
 
 (Much easier to read this regex with the %r{} syntax)
+
+Try it out
+```ruby
+irb(main):009:0> /[np][al][mg]\d{5}/.match 'nlg00495'
+=> #<MatchData "nlg00495">
+
+irb(main):010:0> /[np][al][mg]\d{5}/.match 'xyz12345'
+=> nil
+```
