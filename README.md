@@ -134,7 +134,7 @@ curl -X POST -d "" localhost:4567/kohls/store1500
 curl -X POST -d "" localhost:4567/kohls/store1500
 ```
 
-Wildcards and regular expressions
+### Wildcards and regular expressions
 
 Can force routes to only be called if the route matches a regex
 
