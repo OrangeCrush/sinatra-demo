@@ -28,3 +28,7 @@ get '/settings' do
     Sinatra logging enabled?: <b>#{settings.logging}</b><br>
     Sinatra environment: <b>#{settings.environment}</b>"
 end
+
+get %r{/kohls/([np][al][gm]\d{5})} do |capture|
+   "Server name : #{capture} was called "
+end

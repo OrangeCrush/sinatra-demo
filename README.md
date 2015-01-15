@@ -23,6 +23,9 @@ sinatra (1.4.5)
 
 ## Getting Started
 
+Instead of using irb for this tutorial I will put all my code in
+routes.rb
+
 file: routes.rb
 ```ruby
 #!/usr/bin/env ruby
@@ -38,7 +41,6 @@ try navigating to http://localhost:4567
 No real configuration needed- very usable out of box
 Some simple configuration options
 
-**Ruby Protip #1 :: labels are string tokens that begin with a colon and are translated to numbers to improve performance**
 (i.e.  :bread, or :paper)
 
 General syntax
@@ -52,16 +54,18 @@ set :port, 4567
 set :logging, true
 set :environment, :production
 
-# access these values later
+# access these values later as
 settings.port      # => evalutes to 4567
 settings.logging   # => evalutes to true
 ```
+
+**Ruby Protip #1 :: labels are string tokens that begin with a colon and are translated to numbers to improve performance**
+Labels are not specific to sinatra
 
 ## Serving static files
 By default all files in the public directory are served statically
 No code / config required outside of the require
 
-file: routes.rb
 ```shell
 [maxwell@Asgard:~/github/sinatra-demo  (master *)  BASH]
 $ ls -lR
@@ -74,10 +78,9 @@ drwxrwxr-x 2 maxwell maxwell 4096 Jan 14 21:39 public/
 ./public:
 total 4
 -rw-rw-r-- 1 maxwell maxwell 129 Jan 14 21:39 index.html
-
 ```
 
-
+index.html can be accessed at localhost:4567/index.html
 
 
 ## Sintra URL routing
@@ -133,4 +136,14 @@ curl -X POST -d "" localhost:4567/kohls/store1500
 
 Wildcards and regular expressions
 
+Can force routes to only be called if the route matches a regex
+
+example regex to match a server hostname at Kohls ([np][al][gm]\d{5})
+
+file: routes.rb
+```ruby
+get %r{/kohls/([np][al][gm]\d{5})} do |capture|
+   "Server name : #{capture} was called "
+end
+```
 
