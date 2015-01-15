@@ -49,6 +49,15 @@ settings.logging   # => evalutes to true
 By default all files in the public directory are served statically
 No code / config required outside of the require
 
+```shell
+[maxwell@Asgard:~/github/sinatra-demo  (master)  BASH]
+$ ls -l
+total 12
+drwxrwxr-x 2 maxwell maxwell 4096 Jan 14 21:39 public/
+-rw-rw-r-- 1 maxwell maxwell 2212 Jan 14 22:38 README.md
+-rwxrwxr-x 1 maxwell maxwell  659 Jan 14 22:28 routes.rb*
+```
+
 
 ## Sintra URL routing
 
